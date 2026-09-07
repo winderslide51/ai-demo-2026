@@ -1,0 +1,29 @@
+.picker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 13px;
+}
+
+.label {
+  color: var(--text-muted);
+}
+
+.select {
+  appearance: none;
+  padding: 6px 30px 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface)
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' fill='none' stroke='%235c6675' stroke-width='1.5'/></svg>")
+    no-repeat right 10px center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: capitalize;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.select:hover {
+  border-color: var(--ink-700);
+}

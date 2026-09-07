@@ -1,0 +1,261 @@
+/* Shared page-level layout pieces */
+
+.rankList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rankItem {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: var(--s-3);
+  align-items: center;
+  font-size: 13px;
+}
+
+.rankIndex {
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.rankName {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.rankName a {
+  color: var(--text);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rankBar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--ink-700);
+}
+
+.rankValue {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.rankValue strong {
+  display: block;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.linkRow {
+  margin-top: var(--s-4);
+  font-size: 13px;
+}
+
+.siteHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-4);
+}
+
+.siteTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+
+.siteMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  margin-top: var(--s-2);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.siteMeta strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.siteFacts {
+  display: flex;
+  gap: var(--s-6);
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.factValue {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.backLink {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.filter select {
+  padding: 6px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  min-width: 180px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: 13px;
+  color: var(--text);
+  padding-bottom: 6px;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--ink-900);
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.grille {
+  width: 100%;
+  font-size: 13px;
+}
+
+.grille th,
+.grille td {
+  padding: var(--s-3);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.grille thead th {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+  border-bottom-color: var(--line-strong);
+}
+
+.grille tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.grilleNum {
+  text-align: right !important;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.grilleUnit {
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.contractFacts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+
+.contractFact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contractFactValue {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.plages {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+
+.plage {
+  padding: var(--s-4);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+.plageHp {
+  background: var(--hp-soft);
+}
+
+.plageHc {
+  background: var(--hc-soft);
+}
+
+.plage h3 {
+  margin-bottom: var(--s-2);
+}
+
+.notFound {
+  text-align: center;
+  padding: var(--s-10);
+}
+
+@media (max-width: 900px) {
+  .contractFacts,
+  .plages {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .siteFacts {
+    gap: var(--s-4);
+  }
+}

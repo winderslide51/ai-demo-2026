@@ -1,0 +1,23 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-4) var(--s-5);
+  border: 1px solid var(--overage);
+  border-left-width: 4px;
+  border-radius: var(--radius-sm);
+  background: var(--overage-soft);
+  color: #7a1c22;
+  font-size: 13px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail {
+  color: var(--text);
+}

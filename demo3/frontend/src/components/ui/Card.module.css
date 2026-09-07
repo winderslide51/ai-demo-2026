@@ -1,0 +1,43 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-5) var(--s-6) 0;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--s-2);
+  flex-shrink: 0;
+}
+
+.body {
+  padding: var(--s-4) var(--s-6) var(--s-6);
+  min-width: 0;
+}
+
+.bodyFlush {
+  padding: var(--s-3) 0 0;
+  min-width: 0;
+}

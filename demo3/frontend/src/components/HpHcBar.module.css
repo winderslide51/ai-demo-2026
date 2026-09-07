@@ -1,0 +1,42 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 110px;
+}
+
+.bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.hp {
+  background: var(--hp);
+}
+
+.hc {
+  background: var(--hc);
+}
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.hpText {
+  color: #8a4f0c;
+}
+
+.hcText {
+  color: #0d5c54;
+}
+
+.compact .legend {
+  font-size: 10px;
+}
