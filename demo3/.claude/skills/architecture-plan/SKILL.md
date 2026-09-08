@@ -36,13 +36,22 @@ réponses de l'utilisateur** aux questions de cette revue.
 - Pas de code. Des signatures et des types, oui ; des corps de fonction, non.
 - Pas une réécriture de la story : il la référence par ses critères.
 - Pas un catalogue d'options : deux alternatives et une recommandation par choix.
+- Pas plus de **150 lignes** (ADR à part, 30 lignes) : au-delà, l'humain de la porte n° 1
+  ne le relit plus, il le survole. Un plan trop long est un plan mal relu.
 
 ## Lancer
 
 ```text
 Utilise le skill architecture-plan pour US-006 : délègue à l'agent architect avec
 docs/revues/US-006-revue.md et les réponses suivantes : (1) …, (2) ….
+Contexte à lire, rien de plus : docs/SPEC-TECHNIQUE.md §4.3 et §5, backend/src/domain/
+tarification.ts, backend/src/routes/sites.ts, frontend/src/pages/SiteDetailPage.tsx.
+Plan en 150 lignes maximum.
 ```
+
+Nommer les fichiers à lire est ce qui rend l'étape rapide : sans cette liste, l'agent
+parcourt la spec entière et le code alentour, et le plan met deux à trois fois plus
+longtemps à sortir — le temps mort le plus visible de la démo.
 
 ## Relecture humaine
 
@@ -57,4 +66,5 @@ de tests prévus, l'alternative écartée. Puis demander la validation. On ne la
 - [ ] Chaque critère d'acceptation → au moins un test nommé dans le plan de tests.
 - [ ] Contrat d'API typé, erreurs avec messages français.
 - [ ] Alternatives et ADR pour chaque choix structurel.
+- [ ] Plan ≤ 150 lignes, ADR ≤ 30 lignes.
 - [ ] Validé par l'humain avant `test-dev`.

@@ -44,8 +44,12 @@ d'obéir. Les afficher telles quelles, sans les résumer.
 
 ## Étape 2 — Plan (agent `architect`) — puis ⏸ porte humaine n° 1
 
-Déléguer à `architect` avec : l'identifiant, le chemin de la revue, et les réponses de
-l'utilisateur. Il rend `docs/architecture/US-XXX-plan.md` (+ ADR si décision structurelle).
+Déléguer à `architect` avec : l'identifiant, le chemin de la revue, les réponses de
+l'utilisateur, **la liste des fichiers à lire** (les sections de la spec technique
+concernées, le fichier de domaine et la page frontend les plus proches) et le rappel du
+budget : **plan ≤ 150 lignes, ADR ≤ 30**. Sans cette liste et ce budget, l'étape prend deux
+à trois fois plus de temps — c'est le temps mort le plus visible de la démo. Il rend
+`docs/architecture/US-XXX-plan.md` (+ ADR si décision structurelle).
 
 **Porte humaine.** Afficher le chemin du plan et un résumé en cinq lignes : la règle, la
 route, l'écran, le nombre de tests prévus, les alternatives écartées. Puis **s'arrêter et

@@ -4,6 +4,11 @@
 `docs/revues/{{ID_STORY}}-revue.md` et les réponses de l'utilisateur. À relire par un humain
 avant `test-dev`.*
 
+> **Budget : 150 lignes.** Repères : cadrage 10 · règle métier 40 · API 25 · frontend 15 ·
+> tests 30 (repère indicatif : cette section ne se comprime pas) · décisions 20 ·
+> découpage + questions 10. Tableaux de 8 lignes maximum, pas de
+> corps de fonction. (Supprimer ce bloc dans le plan rendu.)
+
 ## 1. Cadrage
 
 {{CE_QU_IL_FAUT_DECIDER_EN_TROIS_PHRASES}}
