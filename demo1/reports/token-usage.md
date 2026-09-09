@@ -1,6 +1,6 @@
 # Token usage report
 
-_Generated: 2026-06-05T11:20:23.058Z · Events: 27_
+_Generated: 2026-08-31T07:01:43.397Z · Events: 32_
 
 ## Summary by main agent, subagents & skills
 
@@ -9,23 +9,25 @@ _Generated: 2026-06-05T11:20:23.058Z · Events: 27_
 | main | `main:45908cd5` | claude-opus-4-8 | 1 | 165,469 | 3,966,333 | 1,122,828 | 5,254,630 | 5,254,630 |
 | agent | `angular-dev` | claude-sonnet-4-6 | 5 | 835 | 1,048,513 | 129,530 | 1,178,878 | 235,776 |
 | main | `main:7b99c08b` | claude-opus-4-8 | 1 | 54,267 | 595,264 | 101,685 | 751,216 | 751,216 |
+| main | `main:9ab0b4bc` | claude-fable-5 | 1 | 12,364 | 700,343 | 5,284 | 717,991 | 717,991 |
 | agent | `spring-boot-dev` | claude-sonnet-4-6 | 2 | 272 | 370,125 | 41,639 | 412,036 | 206,018 |
 | main | `main:aa542b90` | claude-opus-4-8 | 1 | 14,088 | 265,709 | 103,859 | 383,656 | 383,656 |
-| agent | `main` | claude-haiku-4-5-20251001 | 17 | 16,532 | 209,189 | 6,011 | 231,732 | 13,631 |
-| **All** | | | 27 | **251,463** | **6,455,133** | **1,505,552** | **8,212,148** | |
+| agent | `main` | claude-haiku-4-5-20251001 | 20 | 16,532 | 209,189 | 6,011 | 231,732 | 11,587 |
+| main | `main:1cffb616` | claude-fable-5 | 1 | 6 | 48,402 | 309 | 48,717 | 48,717 |
+| **All** | | | 32 | **263,833** | **7,203,878** | **1,511,145** | **8,978,856** | |
 
 ### By kind
 
 | Kind | Runs | Input | Cache write | Output | Total |
 |------|-----:|------:|------------:|-------:|------:|
-| main | 3 | 233,824 | 4,827,306 | 1,328,372 | 6,389,502 |
-| agent | 24 | 17,639 | 1,627,827 | 177,180 | 1,822,646 |
+| main | 5 | 246,194 | 5,576,051 | 1,333,965 | 7,156,210 |
+| agent | 27 | 17,639 | 1,627,827 | 177,180 | 1,822,646 |
 
 ## By speckit feature
 
 | Feature | Events | Input | Cache write | Output | Total |
 |---------|-------:|------:|------------:|-------:|------:|
-| `001-product-management` | 27 | 251,463 | 6,455,133 | 1,505,552 | 8,212,148 |
+| `001-product-management` | 32 | 263,833 | 7,203,878 | 1,511,145 | 8,978,856 |
 
 > **main** = main agent (whole session, cumulative, exact, upserted). **agent**
 > = subagent (own transcript, exact, per run; custom agents keep their name,
@@ -67,5 +69,10 @@ _Generated: 2026-06-05T11:20:23.058Z · Events: 27_
 | 2026-06-05 11:14:13 | `001-product-management` | agent | `main` | — | 0 | 0 | 0 | 0 |
 | 2026-06-05 11:17:17 | `001-product-management` | main | `main:aa542b90` | claude-opus-4-8 | 14088 | 265709 | 103859 | 383656 |
 | 2026-06-05 11:20:23 | `001-product-management` | agent | `main` | — | 0 | 0 | 0 | 0 |
+| 2026-06-10 07:43:22 | `001-product-management` | main | `main:9ab0b4bc` | claude-fable-5 | 12364 | 700343 | 5284 | 717991 |
+| 2026-06-10 07:43:26 | `001-product-management` | agent | `main` | — | 0 | 0 | 0 | 0 |
+| 2026-06-10 07:46:28 | `001-product-management` | agent | `main` | — | 0 | 0 | 0 | 0 |
+| 2026-08-31 07:01:39 | `001-product-management` | main | `main:1cffb616` | claude-fable-5 | 6 | 48402 | 309 | 48717 |
+| 2026-08-31 07:01:43 | `001-product-management` | agent | `main` | — | 0 | 0 | 0 | 0 |
 
-<!-- diag · last event: subagentstop · payload keys: session_id, transcript_path, cwd, permission_mode, agent_id, agent_type, effort, hook_event_name, stop_hook_active, agent_transcript_path, last_assistant_message, background_tasks, session_crons -->
+<!-- diag · last event: subagentstop · payload keys: session_id, transcript_path, cwd, prompt_id, permission_mode, agent_id, agent_type, effort, hook_event_name, stop_hook_active, agent_transcript_path, last_assistant_message, background_tasks, session_crons -->
