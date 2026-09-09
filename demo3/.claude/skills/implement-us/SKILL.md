@@ -31,7 +31,8 @@ business-analyst ──▶ architect ──▶ ⏸ humain ──▶ test-dev ─
 ## Étape 1 — Revue du besoin (agent `business-analyst`)
 
 Déléguer à `business-analyst` avec l'identifiant de la story. Il rend :
-`docs/revues/US-XXX-revue.md` et un verdict : **Prête**, **À clarifier** ou **Non prête**.
+`docs/revues/US-XXX-revue.md` **+ son PDF**, et un verdict : **Prête**, **À clarifier** ou
+**Non prête**.
 
 | Verdict | Suite |
 |---|---|

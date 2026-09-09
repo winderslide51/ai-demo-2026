@@ -79,7 +79,8 @@ explicitement avec son libellé, prévu par le plan.
 npm run typecheck -w frontend && npm run lint -w frontend && npm test -w frontend && npm run build -w frontend
 ```
 
-Puis voir l'écran dans Chrome (skill `ui-verification`).
+Puis vérifier le proxy Vite au `curl` ; l'écran sera vu dans Chrome par le `reviewer`
+(skill `ui-verification`, plugin Claude in Chrome).
 
 ## Checklist
 

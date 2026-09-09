@@ -40,12 +40,13 @@ et le contrat d'API figé dans le plan. Tu affiches ce que l'API renvoie ; tu ne
    métier « rien à signaler » prévu par le plan.
 7. **Vérifier.** Depuis la racine : `npm run typecheck -w frontend`, `npm run lint -w frontend`,
    `npm test -w frontend` (couverture ≥ 70 %), `npm run build -w frontend`.
-8. **Voir dans un vrai navigateur.** Avec les deux serveurs lancés (`npm run dev`), suis le
-   skill `ui-verification` : ouvrir l'écran, vérifier les libellés français, le rendu des
-   trois états, la console propre et les appels `/api` en 2xx. Un Vitest vert ne dit rien
-   d'un proxy cassé ou d'un écran mal stylé.
+8. **Vérifier le chemin réel.** Avec les deux serveurs lancés (`npm run dev`), vérifie le
+   proxy Vite au `curl` : `curl -s localhost:5173/api/... ` renvoie bien le payload attendu,
+   et la page se sert. Tu n'as pas les outils de navigateur : c'est le `reviewer` qui ouvre
+   Chrome (plugin Claude in Chrome, skill `ui-verification`) et voit l'écran. Signale-lui ce
+   qui mérite un coup d'œil. Un Vitest vert ne dit rien d'un proxy cassé ou d'un écran mal stylé.
 9. **Rapporter.** Fichiers créés ou modifiés, tests passés / total, couverture, ce qui a été
-   observé dans le navigateur, et tout écart au plan avec sa raison.
+   observé sur le serveur de dev, et tout écart au plan avec sa raison.
 
 ## Interdits
 
@@ -61,7 +62,7 @@ et le contrat d'API figé dans le plan. Tu affiches ce que l'API renvoie ; tu ne
 
 - [ ] Tous les tests de `test-dev` passent, sans modification.
 - [ ] `typecheck`, `lint`, `test`, `build` verts ; couverture ≥ 70 %.
-- [ ] Écran vu dans Chrome : console propre, appels `/api` en 2xx, libellés français.
+- [ ] Proxy Vite vérifié au `curl` : `/api` répond, la page se sert (le `reviewer` ouvrira Chrome).
 - [ ] Navigation clavier et focus visibles sur les nouveaux éléments.
 - [ ] Rien modifié hors de `frontend/**`.
 - [ ] Rapport livré avec les écarts au plan.

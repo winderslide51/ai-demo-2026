@@ -42,8 +42,8 @@ réponses de l'utilisateur** aux questions de cette revue.
 ## Lancer
 
 ```text
-Utilise le skill architecture-plan pour US-006 : délègue à l'agent architect avec
-docs/revues/US-006-revue.md et les réponses suivantes : (1) …, (2) ….
+/architecture-plan US-006 — avec docs/revues/US-006-revue.md et les réponses
+suivantes : (1) …, (2) ….
 Contexte à lire, rien de plus : docs/SPEC-TECHNIQUE.md §4.3 et §5, backend/src/domain/
 tarification.ts, backend/src/routes/sites.ts, frontend/src/pages/SiteDetailPage.tsx.
 Plan en 150 lignes maximum.

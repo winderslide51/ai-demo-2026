@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/token-tracker.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Comptage des tokens de l'agent…"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/token-tracker.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Comptage des tokens de la session…"
+          }
+        ]
+      }
+    ]
+  }
+}

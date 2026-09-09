@@ -35,6 +35,8 @@ frontend/src/             # api/, types/, hooks/, components/, pages/, styles/
 .claude/agents/           # business-analyst, architect, test-dev, node-dev, react-dev, reviewer, tech-writer
 .claude/skills/           # implement-us (the workflow), plus one skill per practice
 .claude/rules/            # Do / Don't rules, auto-loaded
+.claude/hooks/            # token-tracker.mjs — writes reports/token-usage.md on Stop/SubagentStop
+reports/token-usage.md    # token consumption per agent, per session, per story (generated)
 ```
 
 ## Conventions
