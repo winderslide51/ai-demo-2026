@@ -1,0 +1,20 @@
+"""Shared pytest fixtures for the backend test suite."""
+
+from collections.abc import Iterator
+
+import pytest
+from fastapi.testclient import TestClient
+
+from app.main import create_app
+
+
+@pytest.fixture
+def client() -> Iterator[TestClient]:
+    """A TestClient over a freshly created app.
+
+    ``raise_server_exceptions=False`` is required to exercise the unhandled
+    ``500`` path through the error boundary instead of re-raising in tests.
+    """
+    app = create_app()
+    with TestClient(app, raise_server_exceptions=False) as test_client:
+        yield test_client

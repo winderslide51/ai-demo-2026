@@ -1,0 +1,98 @@
+:root {
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border: #e2e5ea;
+  --color-text: #1a1d23;
+  --color-text-muted: #5d6470;
+
+  --color-primary: #2f5bea;
+  --color-primary-hover: #2448c4;
+
+  --color-success: #1a7f52;
+  --color-success-bg: #e3f6ec;
+  --color-danger: #c0392b;
+  --color-danger-bg: #fdeaea;
+  --color-pending-bg: #eef1f6;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+
+  --radius: 8px;
+  --font-sans:
+    system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: var(--space-4);
+}
+
+.status-message {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+}
+
+.status-message--pending {
+  background-color: var(--color-pending-bg);
+}
+
+.status-message--success {
+  background-color: var(--color-success-bg);
+  border-color: var(--color-success);
+}
+
+.status-message--danger {
+  background-color: var(--color-danger-bg);
+  border-color: var(--color-danger);
+}
+
+.status-message__title {
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+
+.status-message__description {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.status-message__action {
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: var(--space-2) var(--space-4);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.status-message__action:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.status-message__action:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
