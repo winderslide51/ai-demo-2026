@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react'
-import App from './App'
+import { screen } from '@testing-library/react'
+import { renderApp } from './test/renderWithRouter'
 
-test('renders the app', () => {
-  render(<App />)
-  expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument()
+test('renders the home page inside the layout', async () => {
+  renderApp('/')
+  expect(await screen.findByRole('heading', { level: 1, name: 'Bientôt : les annonces' })).toBeInTheDocument()
+  expect(screen.getByRole('link', { name: 'leboncoin, accueil' })).toBeInTheDocument()
 })
