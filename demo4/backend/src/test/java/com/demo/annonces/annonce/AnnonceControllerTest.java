@@ -11,8 +11,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.hasSize;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -100,6 +102,39 @@ class AnnonceControllerTest {
                 .andExpect(jsonPath("$.errors[0].field").value("category"))
                 .andExpect(jsonPath("$.errors[0].message").value("Catégorie inconnue"));
         verifyNoInteractions(service);
+    }
+
+    @Test
+    void listReturns200WithTheAnnoncesInServiceOrder() throws Exception {
+        AnnonceResponse older = new AnnonceResponse(UUID.randomUUID(), "Canapé 3 places", Category.MAISON,
+                "Canapé en tissu gris, très confortable.", 120, "Nantes", "44000",
+                Instant.parse("2026-09-21T10:00:00Z"));
+        when(service.findAll()).thenReturn(List.of(response(), older));
+
+        mockMvc.perform(get("/api/annonces"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].id").value(ID.toString()))
+                .andExpect(jsonPath("$[0].title").value("Vélo de course"))
+                .andExpect(jsonPath("$[0].category").value("LOISIRS"))
+                .andExpect(jsonPath("$[0].description").value("Vélo de course en très bon état, peu servi."))
+                .andExpect(jsonPath("$[0].price").value(350))
+                .andExpect(jsonPath("$[0].city").value("Lyon"))
+                .andExpect(jsonPath("$[0].postalCode").value("69003"))
+                .andExpect(jsonPath("$[0].createdAt").value("2026-09-15T10:00:00Z"))
+                .andExpect(jsonPath("$[1].title").value("Canapé 3 places"));
+    }
+
+    @Test
+    void listReturns200WithAnEmptyArrayWhenThereIsNoAnnonce() throws Exception {
+        when(service.findAll()).thenReturn(List.of());
+
+        mockMvc.perform(get("/api/annonces"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$", hasSize(0)));
     }
 
     @Test

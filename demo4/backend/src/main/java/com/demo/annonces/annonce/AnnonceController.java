@@ -2,6 +2,7 @@ package com.demo.annonces.annonce;
 
 import jakarta.validation.Valid;
 import java.net.URI;
+import java.util.List;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,11 @@ public class AnnonceController {
                 .buildAndExpand(created.id())
                 .toUri();
         return ResponseEntity.created(location).body(created);
+    }
+
+    @GetMapping
+    public List<AnnonceResponse> list() {
+        return service.findAll();
     }
 
     @GetMapping("/{id}")

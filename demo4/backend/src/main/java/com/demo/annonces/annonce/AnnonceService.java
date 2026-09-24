@@ -2,6 +2,7 @@ package com.demo.annonces.annonce;
 
 import java.time.Clock;
 import java.time.Instant;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,13 @@ public class AnnonceService {
                 Objects.requireNonNull(request.postalCode()),
                 Instant.now(clock));
         return AnnonceResponse.from(repository.save(annonce));
+    }
+
+    @Transactional(readOnly = true)
+    public List<AnnonceResponse> findAll() {
+        return repository.findAllByOrderByCreatedAtDesc().stream()
+                .map(AnnonceResponse::from)
+                .toList();
     }
 
     @Transactional(readOnly = true)

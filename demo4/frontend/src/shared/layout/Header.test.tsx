@@ -2,6 +2,15 @@ import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderApp } from '../../test/renderWithRouter'
 
+// rendering '/' mounts HomePage, which fetches the annonce list
+beforeEach(() => {
+  vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('[]', { headers: { 'Content-Type': 'application/json' } })))
+})
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+})
+
 test('shows logo, search placeholder and deposit link', async () => {
   renderApp('/')
   expect(await screen.findByText('leboncoin')).toBeInTheDocument()

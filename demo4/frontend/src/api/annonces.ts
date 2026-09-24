@@ -40,6 +40,10 @@ export type Annonce = CreateAnnonceInput & {
   createdAt: string
 }
 
+export function listAnnonces(): Promise<Annonce[]> {
+  return request<Annonce[]>('/api/annonces')
+}
+
 export function createAnnonce(input: CreateAnnonceInput): Promise<Annonce> {
   return request<Annonce>('/api/annonces', { method: 'POST', json: input })
 }
